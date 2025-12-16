@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>UMKM Kuliner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>UMKM Kuliner</h1>
+    <p>Menyajikan makanan lezat, higienis, dan terjangkau</p>
+</header>
+<div class="nav-buttons">
+    <button onclick="scrollToSection('branda')">Branda</button>
+    <button onclick="scrollToSection('menu')">Menu</button>
+    <button onclick="scrollToSection('kontak')">Kontak</button>
+</div>
+<section id="beranda">
+    <h2>Selamat Datang</h2>
+    <p class="deskripsi-umkm">
+        UMKM Kuliner Lezat merupakan usaha kuliner lokal yang menyajikan
+        berbagai menu makanan dan minuman dengan cita rasa khas Indonesia.
+        Website ini dibuat untuk memudahkan pelanggan dalam melihat menu
+        dan melakukan pemesanan secara online.
+    </p>
+</section>
+
+<!-- MENU MAKANAN -->
+<section id="menu">
+    <h2 class="judul-menu">Menu Makanan</h2>
+    <div class="menu-container">
+
+        <div class="menu-item">
+            <img src="img/nasi-goreng.jpg">
+            <h3>Nasi Goreng Spesial</h3>
+            <p class="deskripsi">Nasi goreng dengan bumbu khas dan telur.</p>
+            <p>Harga: Rp20.000</p>
+            <button onclick="pesan('Nasi Goreng Spesial',20000)">Pesan</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="img/mie-ayam.jpg">
+            <h3>Mie Ayam Bakso</h3>
+            <p class="deskripsi">Mie ayam dengan bakso sapi pilihan.</p>
+            <p>Harga: Rp18.000</p>
+            <button onclick="pesan('Mie Ayam Bakso',18000)">Pesan</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="img/ayam-geprek.jpg">
+            <h3>Ayam Geprek</h3>
+            <p class="deskripsi">Ayam crispy dengan sambal pedas.</p>
+            <p>Harga: Rp22.000</p>
+            <button onclick="pesan('Ayam Geprek',22000)">Pesan</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="img/bakso.jpg">
+            <h3>Bakso</h3>
+            <p class="deskripsi">Bakso sapi dengan kuah kaldu gurih.</p>
+            <p>Harga: Rp35.000</p>
+            <button onclick="pesan('Bakso',35000)">Pesan</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- MENU MINUMAN -->
+<section id="minuman">
+    <h2 class="judul-menu">Menu Minuman</h2>
+    <div class="menu-container">
+
+        <div class="menu-item">
+            <img src="img/es-teh.jpg">
+            <h3>Es Teh Manis</h3>
+            <p class="deskripsi">Teh segar dengan gula pilihan.</p>
+            <p>Harga: Rp5.000</p>
+            <button onclick="pesan('Es Teh Manis',5000)">Pesan</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="img/es-jeruk.jpg">
+            <h3>Es Jeruk</h3>
+            <p class="deskripsi">Jeruk segar dari buah asli.</p>
+            <p>Harga: Rp7.000</p>
+            <button onclick="pesan('Es Jeruk',7000)">Pesan</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="img/air-putih.jpg">
+            <h3>Air Putih</h3>
+            <p class="deskripsi">Minuman untuk menghilangkan dehidrasi.</p>
+            <p>Harga: Rp5.000</p>
+            <button onclick="pesan('Air Putih',5000)">Pesan</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak">
+    <h2>Kontak Kami</h2>
+    <p>Alamat: Jl. Raya No.10, Jakarta</p>
+    <p>Telepon: 0882-9930-2625</p>
+    <p>WhatsApp: 0882-9930-2625</p>
+</section>
+
+<!-- POPUP PEMBAYARAN -->
+<div id="popupPembayaran" class="popup">
+    <div class="popup-content">
+        <h3>Metode Pembayaran</h3>
+        <p id="menuDipilih"></p>
+
+        <label>Jumlah Porsi:</label>
+        <input type="number" id="jumlah" value="1" min="1" onchange="hitungTotal()">
+
+        <p id="totalHarga"></p>
+
+        <button onclick="bayar('Cash')">Cash</button>
+        <button onclick="bayar('Transfer')">Transfer</button>
+        <button onclick="bayar('E-Wallet')">E-Wallet</button>
+
+        <br><br>
+        <button onclick="tutupPopup()">Batal</button>
+    </div>
+</div>
+
+<!-- STRUK -->
+<div id="struk" class="popup">
+    <div class="popup-content">
+        <h3>Struk Pemesanan</h3>
+        <p id="strukMenu"></p>
+        <p id="strukJumlah"></p>
+        <p id="strukTotal"></p>
+        <p id="strukMetode"></p>
+        <button onclick="tutupStruk()">Tutup</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
